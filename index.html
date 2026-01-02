@@ -3,40 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexander López Mora | Desarrollador Full Stack</title>
-    <meta name="description" content="Curriculum profesional de Alexander López Mora, Desarrollador Full Stack con experiencia en tecnologías modernas y soluciones innovadoras.">
+    <title>Alexander López Mora | CEO & Full Stack Developer</title>
+    <meta name="description" content="CEO de Nowaysolutions y Desarrollador Full Stack especializado en soluciones empresariales, hosting privado y desarrollo de software a medida.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/48/000000/resume.png">
     <style>
         :root {
+            /* Tema Claro */
             --primary-color: #2563eb;
             --primary-dark: #1d4ed8;
-            --secondary-color: #0f172a;
-            --accent-color: #3b82f6;
-            --light-color: #f8fafc;
-            --gray-light: #e2e8f0;
-            --gray-medium: #94a3b8;
-            --gray-dark: #475569;
-            --success-color: #10b981;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --border-radius: 8px;
-            --transition: all 0.3s ease;
+            --secondary-color: #7c3aed;
+            --accent-color: #0ea5e9;
+            --bg-color: #ffffff;
+            --card-bg: #f8fafc;
+            --card-border: #e2e8f0;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --text-light: #f8fafc;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --gradient-primary: linear-gradient(135deg, #2563eb, #7c3aed);
+            --gradient-secondary: linear-gradient(135deg, #0ea5e9, #10b981);
         }
 
         .dark-theme {
+            /* Tema Oscuro */
             --primary-color: #60a5fa;
             --primary-dark: #3b82f6;
-            --secondary-color: #f8fafc;
-            --accent-color: #93c5fd;
-            --light-color: #0f172a;
-            --gray-light: #1e293b;
-            --gray-medium: #475569;
-            --gray-dark: #cbd5e1;
-            --success-color: #34d399;
+            --secondary-color: #a78bfa;
+            --accent-color: #38bdf8;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --text-color: #f1f5f9;
+            --text-muted: #94a3b8;
+            --text-light: #f8fafc;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            --gradient-primary: linear-gradient(135deg, #60a5fa, #a78bfa);
+            --gradient-secondary: linear-gradient(135deg, #38bdf8, #34d399);
         }
 
         * {
@@ -47,14 +57,17 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--secondary-color);
-            background-color: var(--light-color);
+            color: var(--text-color);
+            background-color: var(--bg-color);
             transition: var(--transition);
+            position: relative;
+            overflow-x: hidden;
         }
 
         .container {
@@ -65,17 +78,20 @@
 
         /* Header y Navegación */
         header {
-            background-color: var(--light-color);
+            background-color: var(--bg-color);
             box-shadow: var(--shadow);
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--card-border);
+            transition: var(--transition);
             animation: slideDown 0.5s ease;
         }
 
         @keyframes slideDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .nav-container {
@@ -86,16 +102,20 @@
         }
 
         .logo {
+            font-family: 'Orbitron', sans-serif;
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary-color);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
         .logo i {
-            color: var(--accent-color);
+            color: var(--primary-color);
         }
 
         .nav-links {
@@ -105,7 +125,7 @@
 
         .nav-link {
             text-decoration: none;
-            color: var(--gray-dark);
+            color: var(--text-muted);
             font-weight: 500;
             transition: var(--transition);
             position: relative;
@@ -123,7 +143,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--primary-color);
+            background: var(--gradient-primary);
             transition: width 0.3s ease;
         }
 
@@ -140,7 +160,7 @@
         .theme-toggle, .print-btn {
             background: none;
             border: none;
-            color: var(--gray-dark);
+            color: var(--text-muted);
             font-size: 1.2rem;
             cursor: pointer;
             transition: var(--transition);
@@ -153,8 +173,13 @@
         }
 
         .theme-toggle:hover, .print-btn:hover {
-            background-color: var(--gray-light);
+            background-color: rgba(0, 0, 0, 0.05);
             color: var(--primary-color);
+        }
+
+        .dark-theme .theme-toggle:hover,
+        .dark-theme .print-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .mobile-menu-btn {
@@ -162,31 +187,28 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--gray-dark);
+            color: var(--text-muted);
             cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 8rem 0 4rem;
             position: relative;
             overflow: hidden;
         }
 
-        .dark-theme .hero {
-            background: linear-gradient(135deg, #0c4a6e 0%, #075985 100%);
-        }
-
-        .hero::before {
-            content: '';
+        .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233b82f6' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.5;
+            background: linear-gradient(135deg, 
+                rgba(37, 99, 235, 0.05) 0%, 
+                rgba(124, 58, 237, 0.05) 50%, 
+                rgba(14, 165, 233, 0.05) 100%);
+            z-index: -1;
         }
 
         .hero-content {
@@ -194,11 +216,9 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            position: relative;
-            z-index: 1;
         }
 
-        .profile-image {
+        .profile-container {
             position: relative;
             display: flex;
             justify-content: center;
@@ -206,11 +226,13 @@
         }
 
         .profile-img {
-            width: 300px;
-            height: 300px;
+            width: 280px;
+            height: 280px;
             border-radius: 50%;
             object-fit: cover;
-            border: 8px solid white;
+            border: 5px solid transparent;
+            background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+                        var(--gradient-primary) border-box;
             box-shadow: var(--shadow-lg);
             animation: float 6s ease-in-out infinite;
         }
@@ -220,13 +242,14 @@
             50% { transform: translateY(-20px); }
         }
 
-        .profile-img-border {
+        .profile-ring {
             position: absolute;
             width: 320px;
             height: 320px;
             border-radius: 50%;
             border: 2px dashed var(--primary-color);
             animation: spin 20s linear infinite;
+            opacity: 0.5;
         }
 
         @keyframes spin {
@@ -235,10 +258,11 @@
         }
 
         .hero-text h1 {
-            font-size: 3.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -246,23 +270,36 @@
         }
 
         .hero-text h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            color: var(--gray-dark);
+            color: var(--text-muted);
             margin-bottom: 1.5rem;
         }
 
         .hero-text p {
-            font-size: 1.2rem;
-            color: var(--gray-medium);
+            font-size: 1.1rem;
+            color: var(--text-muted);
             margin-bottom: 2rem;
-            max-width: 90%;
+        }
+
+        .ceo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            box-shadow: var(--shadow);
         }
 
         .cta-buttons {
             display: flex;
             gap: 1rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -280,24 +317,23 @@
         }
 
         .btn-primary {
-            background-color: var(--primary-color);
+            background: var(--gradient-primary);
             color: white;
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-dark);
             transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
         }
 
         .btn-outline {
-            background-color: transparent;
+            background: transparent;
             color: var(--primary-color);
             border: 2px solid var(--primary-color);
         }
 
         .btn-outline:hover {
-            background-color: var(--primary-color);
+            background: var(--primary-color);
             color: white;
             transform: translateY(-3px);
         }
@@ -312,19 +348,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            background-color: var(--gray-light);
-            color: var(--gray-dark);
+            background: var(--card-bg);
+            color: var(--text-muted);
             transition: var(--transition);
             text-decoration: none;
+            font-size: 1.1rem;
+            border: 1px solid var(--card-border);
         }
 
         .social-link:hover {
-            background-color: var(--primary-color);
+            background: var(--gradient-primary);
             color: white;
             transform: translateY(-3px);
+            border-color: transparent;
         }
 
         /* Secciones */
@@ -332,56 +371,48 @@
             padding: 5rem 0;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
+        .section-header {
             text-align: center;
-            position: relative;
-            color: var(--secondary-color);
+            margin-bottom: 3rem;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            border-radius: 2px;
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-color);
         }
 
         .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--gray-medium);
-            text-align: center;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
         /* Cards */
         .card {
-            background-color: var(--light-color);
+            background: var(--card-bg);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             padding: 2rem;
             transition: var(--transition);
-            border: 1px solid var(--gray-light);
+            border: 1px solid var(--card-border);
+            height: 100%;
         }
 
         .card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
         }
 
         /* Sección de Habilidades */
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
         }
 
@@ -390,7 +421,7 @@
         }
 
         .skill-category h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--primary-color);
             display: flex;
@@ -401,119 +432,150 @@
         .skill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.8rem;
         }
 
         .skill-item {
-            background-color: var(--gray-light);
-            padding: 0.5rem 1rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.6rem 1rem;
             border-radius: 50px;
             font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 0.9rem;
             transition: var(--transition);
         }
 
         .skill-item:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .skill-icon {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
         }
 
         /* Sección de Experiencia */
-        .timeline {
+        .experience-container {
             position: relative;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .timeline::after {
+        .experience-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .experience-timeline::before {
             content: '';
             position: absolute;
-            width: 4px;
-            background-color: var(--gray-light);
+            left: 0;
             top: 0;
             bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-            border-radius: 2px;
+            width: 2px;
+            background: var(--gradient-primary);
         }
 
-        .timeline-item {
-            padding: 10px 40px;
+        .experience-item {
             position: relative;
-            width: 50%;
-            animation: fadeInUp 0.8s ease;
+            margin-bottom: 2.5rem;
+            padding-left: 30px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-content {
-            padding: 20px;
-            background-color: var(--light-color);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            position: relative;
-        }
-
-        .timeline-content::after {
+        .experience-item::before {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: var(--light-color);
-            top: 22px;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            z-index: 1;
+            background: var(--primary-color);
+            border: 3px solid var(--bg-color);
         }
 
-        .timeline-item:nth-child(odd) .timeline-content::after {
-            left: -10px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::after {
-            right: -10px;
-        }
-
-        .timeline-date {
+        .experience-date {
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
+            font-size: 0.9rem;
         }
 
-        .timeline-title {
+        .experience-title {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
-            color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .experience-company {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        /* Sección CEO */
+        .ceo-section {
+            background: var(--gradient-primary);
+            padding: 4rem 0;
+            color: white;
+            border-radius: var(--border-radius);
+            margin: 3rem 0;
+        }
+
+        .ceo-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ceo-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .ceo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .ceo-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .ceo-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
         }
 
         /* Sección de Proyectos */
@@ -521,23 +583,28 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
         .project-card {
-            background-color: var(--light-color);
+            background: var(--card-bg);
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            border: 1px solid var(--gray-light);
+            border: 1px solid var(--card-border);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
         }
 
-        .project-img {
+        .project-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
@@ -545,23 +612,35 @@
 
         .project-content {
             padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-title {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .project-description {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1;
         }
 
         .project-tech {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin: 1rem 0;
+            margin-bottom: 1.5rem;
         }
 
         .tech-tag {
-            background-color: var(--gray-light);
+            background: var(--gradient-primary);
+            color: white;
             padding: 0.3rem 0.8rem;
             border-radius: 50px;
             font-size: 0.8rem;
@@ -571,7 +650,14 @@
         .project-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin-top: auto;
+        }
+
+        /* Sección de Educación */
+        .education-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
         }
 
         /* Sección de Contacto */
@@ -591,39 +677,36 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            padding: 1rem;
-            background-color: var(--gray-light);
+            padding: 1.5rem;
+            background: var(--card-bg);
             border-radius: var(--border-radius);
             transition: var(--transition);
+            border: 1px solid var(--card-border);
         }
 
         .contact-item:hover {
-            background-color: var(--primary-color);
-            color: white;
+            transform: translateX(10px);
+            border-color: var(--primary-color);
         }
 
         .contact-icon {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-color: var(--light-color);
+            background: var(--gradient-primary);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            color: var(--primary-color);
-        }
-
-        .contact-item:hover .contact-icon {
-            background-color: white;
-            color: var(--primary-color);
+            color: white;
         }
 
         .contact-form {
-            background-color: var(--light-color);
+            background: var(--card-bg);
             padding: 2rem;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
+            border: 1px solid var(--card-border);
         }
 
         .form-group {
@@ -634,16 +717,16 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
-            color: var(--secondary-color);
+            color: var(--text-color);
         }
 
         .form-control {
             width: 100%;
             padding: 0.8rem;
-            border: 1px solid var(--gray-light);
+            border: 1px solid var(--card-border);
             border-radius: var(--border-radius);
-            background-color: var(--light-color);
-            color: var(--secondary-color);
+            background: var(--bg-color);
+            color: var(--text-color);
             font-family: 'Inter', sans-serif;
             transition: var(--transition);
         }
@@ -656,10 +739,9 @@
 
         /* Footer */
         footer {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
+            background: var(--card-bg);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--card-border);
         }
 
         .footer-content {
@@ -670,9 +752,13 @@
         }
 
         .footer-logo {
+            font-family: 'Orbitron', sans-serif;
             font-size: 2rem;
             font-weight: 700;
-            color: white;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .footer-links {
@@ -683,7 +769,7 @@
         }
 
         .footer-link {
-            color: var(--gray-light);
+            color: var(--text-muted);
             text-decoration: none;
             transition: var(--transition);
         }
@@ -693,9 +779,10 @@
         }
 
         .copyright {
-            color: var(--gray-medium);
+            color: var(--text-muted);
             font-size: 0.9rem;
             margin-top: 2rem;
+            text-align: center;
         }
 
         /* Scroll to top button */
@@ -706,7 +793,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-color: var(--primary-color);
+            background: var(--gradient-primary);
             color: white;
             border: none;
             cursor: pointer;
@@ -727,8 +814,8 @@
         }
 
         .scroll-top:hover {
-            background-color: var(--primary-dark);
             transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
 
         /* Responsive Design */
@@ -736,10 +823,7 @@
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
-            }
-            
-            .hero-text p {
-                max-width: 100%;
+                gap: 3rem;
             }
             
             .profile-img {
@@ -747,23 +831,13 @@
                 height: 250px;
             }
             
-            .profile-img-border {
-                width: 270px;
-                height: 270px;
+            .profile-ring {
+                width: 290px;
+                height: 290px;
             }
             
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
+            .hero-text h1 {
+                font-size: 2.5rem;
             }
         }
 
@@ -774,10 +848,11 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: var(--light-color);
+                background: var(--bg-color);
                 flex-direction: column;
                 padding: 1rem;
                 box-shadow: var(--shadow);
+                border-top: 1px solid var(--card-border);
             }
             
             .nav-links.active {
@@ -789,31 +864,25 @@
             }
             
             .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-text h2 {
-                font-size: 1.5rem;
+                font-size: 2.2rem;
             }
             
             .section-title {
                 font-size: 2rem;
             }
             
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
             
-            .btn {
-                width: 100%;
-                justify-content: center;
+            .skills-container {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 576px) {
             .hero {
-                padding: 3rem 0;
+                padding: 7rem 0 3rem;
             }
             
             section {
@@ -825,16 +894,21 @@
                 height: 200px;
             }
             
-            .profile-img-border {
-                width: 220px;
-                height: 220px;
+            .profile-ring {
+                width: 240px;
+                height: 240px;
             }
             
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .cta-buttons {
+                flex-direction: column;
             }
             
-            .contact-container {
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .ceo-services {
                 grid-template-columns: 1fr;
             }
         }
@@ -846,13 +920,14 @@
         <div class="container nav-container">
             <div class="logo">
                 <i class="fas fa-code"></i>
-                <span>ALM</span>
+                <span>ALEXANDER LÓPEZ</span>
             </div>
             
             <nav class="nav-links">
                 <a href="#inicio" class="nav-link">Inicio</a>
                 <a href="#habilidades" class="nav-link">Habilidades</a>
                 <a href="#experiencia" class="nav-link">Experiencia</a>
+                <a href="#ceo" class="nav-link">CEO</a>
                 <a href="#proyectos" class="nav-link">Proyectos</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
             </nav>
@@ -873,17 +948,24 @@
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
+        <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="profile-image">
-                    <div class="profile-img-border"></div>
-                    <img src="https://scontent.fcyw4-1.fna.fbcdn.net/v/t39.30808-6/435707986_7450544518400393_2924672308576400157_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=y8U3HcDrXJ4Q7kNvwFhyMcI&_nc_oc=AdncLsw7kgykqcmuATpGeLei6Ffo9x3tpmhUlDakl4jc4faKKZ8qYNmyJ45yqQU9Yp0&_nc_zt=23&_nc_ht=scontent.fcyw4-1.fna&_nc_gid=0UB-DzZq0ht8UwA2f_iwJA&oh=00_AfLqvRWw_cEZOeZ0E34zlYpmnmOz4isu_3xgm02XJSAN1w&oe=6843D0B1" alt="Alexander López Mora" class="profile-img">
+                <div class="profile-container">
+                    <div class="profile-ring"></div>
+                    <img src="https://scontent.fcyw4-1.fna.fbcdn.net/v/t39.30808-6/435707986_7450544518400393_2924672308576400157_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHd_WmzZwOKfql0kJV3N9JUeyjI3df_ABZ7KMjd1_8AFiJhBuuLFRKLTi4dW4Fq95aX-DllHN0oNdmVBGlSkes9&_nc_ohc=I_iFR6VadssQ7kNvwHmVxg3&_nc_oc=AdleBa_8JZleufQrSBrggFwPfURjZ3MjBW1mcb45F3WWoHkFpRoCIhBe1b8Vuj29VWkG_ZNo6s3h4171mDvJ7rs5&_nc_zt=23&_nc_ht=scontent.fcyw4-1.fna&_nc_gid=ABfI6rIaEkz6SYCunqEjzw&oh=00_AfpTw0mvVfBHeC8U2SOKsYjHnRlP63Rhcy7lx_OSQjMNgg&oe=695E29F1" 
+                         alt="Alexander López Mora" 
+                         class="profile-img">
                 </div>
                 
                 <div class="hero-text">
+                    <div class="ceo-badge">
+                        <i class="fas fa-crown"></i>
+                        <span>CEO de Nowaysolutions</span>
+                    </div>
                     <h1>Alexander López Mora</h1>
-                    <h2>Desarrollador Full Stack</h2>
-                    <p>Especializado en crear soluciones tecnológicas innovadoras con más de 3 años de experiencia en desarrollo de software. Apasionado por la implementación de arquitecturas escalables y el desarrollo de aplicaciones de alto rendimiento.</p>
+                    <h2>Full Stack Developer & Tech Entrepreneur</h2>
+                    <p>Especializado en desarrollo de software empresarial, arquitecturas escalables y soluciones de infraestructura personalizada. Más de 4 años de experiencia liderando proyectos tecnológicos innovadores.</p>
                     
                     <div class="cta-buttons">
                         <a href="#contacto" class="btn btn-primary">
@@ -892,10 +974,13 @@
                         <a href="#proyectos" class="btn btn-outline">
                             <i class="fas fa-project-diagram"></i> Ver Proyectos
                         </a>
+                        <a href="https://devnoway.com" target="_blank" class="btn btn-outline">
+                            <i class="fas fa-external-link-alt"></i> devnoway.com
+                        </a>
                     </div>
                     
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="GitHub">
+                        <a href="https://github.com/Alex-cpp-lm" class="social-link" aria-label="GitHub" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="social-link" aria-label="LinkedIn">
@@ -916,52 +1001,34 @@
     <!-- Sección de Habilidades -->
     <section id="habilidades" class="skills-section">
         <div class="container">
-            <h2 class="section-title">Habilidades Técnicas</h2>
-            <p class="section-subtitle">Dominio de tecnologías modernas para el desarrollo de soluciones completas y eficientes</p>
+            <div class="section-header">
+                <h2 class="section-title">Habilidades Técnicas</h2>
+                <p class="section-subtitle">Dominio completo del stack tecnológico moderno para desarrollo empresarial</p>
+            </div>
             
             <div class="skills-container">
                 <div class="card">
                     <div class="skill-category">
-                        <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+                        <h3><i class="fas fa-code"></i> Frontend & Frameworks</h3>
                         <div class="skill-list">
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #E34F26; color: white">HTML</span>
-                                HTML5
-                            </span>
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #1572B6; color: white">CSS</span>
-                                CSS3
-                            </span>
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #F7DF1E; color: black">JS</span>
-                                JavaScript
-                            </span>
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #61DAFB; color: black">R</span>
-                                React
-                            </span>
+                            <span class="skill-item">React.js</span>
+                            <span class="skill-item">Vue.js</span>
+                            <span class="skill-item">HTML5/CSS3</span>
+                            <span class="skill-item">JavaScript ES6+</span>
+                            <span class="skill-item">TypeScript</span>
+                            <span class="skill-item">Tailwind CSS</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <h3><i class="fas fa-server"></i> Backend</h3>
+                        <h3><i class="fas fa-server"></i> Backend & APIs</h3>
                         <div class="skill-list">
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #239120; color: white">C#</span>
-                                C#
-                            </span>
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #777BB4; color: white">PHP</span>
-                                PHP
-                            </span>
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #3776AB; color: white">Py</span>
-                                Python
-                            </span>
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #000000; color: white">J</span>
-                                Java
-                            </span>
+                            <span class="skill-item">Node.js</span>
+                            <span class="skill-item">PHP/Laravel</span>
+                            <span class="skill-item">Python/Django</span>
+                            <span class="skill-item">C#/.NET</span>
+                            <span class="skill-item">REST APIs</span>
+                            <span class="skill-item">GraphQL</span>
                         </div>
                     </div>
                 </div>
@@ -970,36 +1037,24 @@
                     <div class="skill-category">
                         <h3><i class="fas fa-database"></i> Bases de Datos</h3>
                         <div class="skill-list">
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #4479A1; color: white">My</span>
-                                MySQL
-                            </span>
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #CC2927; color: white">SQL</span>
-                                SQL Server
-                            </span>
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #4169E1; color: white">PG</span>
-                                PostgreSQL
-                            </span>
+                            <span class="skill-item">MySQL</span>
+                            <span class="skill-item">PostgreSQL</span>
+                            <span class="skill-item">MongoDB</span>
+                            <span class="skill-item">SQL Server</span>
+                            <span class="skill-item">Redis</span>
+                            <span class="skill-item">Firebase</span>
                         </div>
                     </div>
                     
                     <div class="skill-category">
-                        <h3><i class="fas fa-tools"></i> Herramientas</h3>
+                        <h3><i class="fas fa-network-wired"></i> DevOps & Infraestructura</h3>
                         <div class="skill-list">
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #F05032; color: white">Git</span>
-                                Git
-                            </span>
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #000000; color: white">D</span>
-                                Docker
-                            </span>
-                            <span class="skill-item">
-                                <span class="skill-icon" style="background-color: #000000; color: white">VS</span>
-                                Visual Studio
-                            </span>
+                            <span class="skill-item">Docker</span>
+                            <span class="skill-item">n8n Automatización</span>
+                            <span class="skill-item">Cloudflare Tunnels</span>
+                            <span class="skill-item">Servidores Locales</span>
+                            <span class="skill-item">AWS</span>
+                            <span class="skill-item">CI/CD</span>
                         </div>
                     </div>
                 </div>
@@ -1008,37 +1063,220 @@
     </section>
 
     <!-- Sección de Experiencia -->
-    <section id="experiencia" class="experience-section" style="background-color: #f8fafc;">
+    <section id="experiencia" class="experience-section">
         <div class="container">
-            <h2 class="section-title">Experiencia Profesional</h2>
-            <p class="section-subtitle">Trayectoria laboral y logros destacados en el desarrollo de software</p>
+            <div class="section-header">
+                <h2 class="section-title">Experiencia Profesional</h2>
+                <p class="section-subtitle">Trayectoria de liderazgo y desarrollo de soluciones tecnológicas empresariales</p>
+            </div>
             
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content card">
-                        <div class="timeline-date">2022 - Presente</div>
-                        <h3 class="timeline-title">Desarrollador Full Stack</h3>
-                        <h4>EGO GYM</h4>
-                        <p>Desarrollo e implementación de un sistema de punto de venta especializado con funciones de reconocimiento facial y control de torniquetes. Mejora de la eficiencia operativa en un 40%.</p>
-                        <ul>
-                            <li>Arquitectura de software escalable</li>
-                            <li>Integración de APIs de reconocimiento facial</li>
-                            <li>Optimización de rendimiento de base de datos</li>
-                        </ul>
+            <div class="experience-container">
+                <div class="experience-timeline">
+                    <div class="experience-item">
+                        <div class="experience-date">2026 - Presente</div>
+                        <h3 class="experience-title">CEO & Fundador</h3>
+                        <h4 class="experience-company">Nowaysolutions</h4>
+                        <div class="card">
+                            <p>Liderazgo estratégico de empresa especializada en hosting privado con servidores propios y desarrollo de soluciones empresariales personalizadas.</p>
+                            <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--text-muted);">
+                                <li>Infraestructura de hosting privado con servidores dedicados</li>
+                                <li>Desarrollo de soluciones empresariales a medida</li>
+                                <li>Automatización de procesos con n8n</li>
+                                <li>Consultoría tecnológica para empresas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-date">2024 - 2025</div>
+                        <h3 class="experience-title">Desarrollador Full Stack Senior</h3>
+                        <h4 class="experience-company">EGO GYM</h4>
+                        <div class="card">
+                            <p>Desarrollo e implementación de sistemas de punto de venta especializados con reconocimiento facial y control de acceso.</p>
+                            <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--text-muted);">
+                                <li>Sistema POS con reconocimiento facial</li>
+                                <li>Arquitectura escalable para múltiples sucursales</li>
+                                <li>Integración de APIs de pago y biometría</li>
+                                <li>Mejora de eficiencia operativa en 40%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-date">2023 - 2024</div>
+                        <h3 class="experience-title">Desarrollador Web</h3>
+                        <h4 class="experience-company">ATENEA STORE</h4>
+                        <div class="card">
+                            <p>Desarrollo de plataforma de e-commerce con sistema de pagos en línea y gestión de inventario automatizado.</p>
+                            <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--text-muted);">
+                                <li>Tienda en línea con React, PHP y MySQL</li>
+                                <li>Sistema de pagos en línea integrado</li>
+                                <li>Panel administrativo completo</li>
+                                <li>Aumento de conversiones en 25%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección CEO -->
+    <section id="ceo" class="ceo-section">
+        <div class="container">
+            <div class="ceo-content">
+                <div class="ceo-logo">NOWAYSOLUTIONS</div>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                    Empresa especializada en soluciones tecnológicas empresariales, hosting privado con servidores propios 
+                    y desarrollo de software a medida.
+                </p>
+                <a href="https://devnoway.com" target="_blank" class="ceo-link">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Visitar devnoway.com</span>
+                </a>
+                
+                <div class="ceo-services">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Hosting Privado</h3>
+                        <p>Infraestructura con servidores dedicados y control total</p>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Desarrollo Personalizado</h3>
+                        <p>Software empresarial a medida para cada cliente</p>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Infraestructura IT</h3>
+                        <p>Soluciones de red y automatización de procesos</p>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Seguridad & Soporte</h3>
+                        <p>Protección de datos y soporte técnico 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section id="proyectos" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <p class="section-subtitle">Implementaciones tecnológicas que demuestran habilidades técnicas y capacidad de innovación</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Proyecto 1: Control Escolar CBTIS 217 -->
+                <div class="project-card">
+                    <img src="https://cbtis217.edu.mx/recursos/img/logo.png" 
+                         alt="Sistema Control Escolar" 
+                         class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Control Escolar CBTIS 217</h3>
+                        <p class="project-description">Sistema integral de gestión escolar con control de calificaciones, asistencia, horarios y comunicación padres-maestros.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Livewire</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fas fa-eye"></i> Demo
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="timeline-item">
-                    <div class="timeline-content card">
-                        <div class="timeline-date">2021 - 2022</div>
-                        <h3 class="timeline-title">Desarrollador Web</h3>
-                        <h4>ATENEA STORE</h4>
-                        <p>Desarrollo de tienda en línea utilizando WordPress, React y PHP. Implementación de sistema de pagos en línea y gestión de inventario automatizado.</p>
-                        <ul>
-                            <li>Aumento de conversiones en un 25%</li>
-                            <li>Optimización de tiempos de carga</li>
-                            <li>Integración de pasarelas de pago</li>
-                        </ul>
+                <!-- Proyecto 2: POS Barbería -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="POS Barbería" 
+                         class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">POS Barbería Premium</h3>
+                        <p class="project-description">Punto de venta especializado para barberías con agenda de citas, control de inventario y app móvil para reservaciones.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Socket.io</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fas fa-mobile-alt"></i> App
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 3: EGOGYM Web POS -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="EGOGYM Web" 
+                         class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">EGOGYM POS 3.0 (Web)</h3>
+                        <p class="project-description">Versión web mejorada del sistema POS para gimnasios con reconocimiento facial, control de acceso y análisis en tiempo real.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">NestJS</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">WebRTC</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://github.com/Alex-cpp-lm/GYMEGO-POS" 
+                               class="btn btn-outline" 
+                               style="padding: 0.5rem 1rem; font-size: 0.9rem;"
+                               target="_blank">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 4: Arol Textil -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1561489396-888724a1543d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Arol Textil" 
+                         class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Gestor Arol Textil</h3>
+                        <p class="project-description">Sistema de gestión de archivos y pedidos internos con automatización de flujos de trabajo y seguimiento de pedidos.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">n8n</span>
+                            <span class="tech-tag">AWS S3</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fas fa-file-alt"></i> Caso de Estudio
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1048,116 +1286,67 @@
     <!-- Sección de Educación -->
     <section id="educacion" class="education-section">
         <div class="container">
-            <h2 class="section-title">Formación Académica</h2>
-            <p class="section-subtitle">Preparación profesional y constante actualización tecnológica</p>
+            <div class="section-header">
+                <h2 class="section-title">Formación Académica</h2>
+                <p class="section-subtitle">Base educativa y compromiso con el aprendizaje continuo en tecnología</p>
+            </div>
             
-            <div class="skills-container">
+            <div class="education-container">
                 <div class="card">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
-                        <i class="fas fa-graduation-cap"></i> Educación Superior
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.3rem;">
+                        <i class="fas fa-graduation-cap"></i> Educación Formal
                     </h3>
-                    <div class="timeline-content">
-                        <div class="timeline-date">En Proceso</div>
-                        <h3 class="timeline-title">Ingeniería en Sistemas Computacionales</h3>
-                        <h4>ITSUR</h4>
-                        <p>Especialización en desarrollo de software y arquitecturas de sistemas.</p>
+                    
+                    <div class="experience-item" style="padding-left: 0; margin-bottom: 2rem; border-left: none;">
+                        <div class="experience-date">En Proceso</div>
+                        <h3 class="experience-title">Ingeniería en Sistemas Computacionales</h3>
+                        <h4 class="experience-company">ITSUR</h4>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">
+                            Especialización en arquitecturas de software y sistemas distribuidos.
+                        </p>
                     </div>
                     
-                    <div class="timeline-content" style="margin-top: 1.5rem;">
-                        <div class="timeline-date">2018 - 2021</div>
-                        <h3 class="timeline-title">Técnico en Programación</h3>
-                        <h4>CBTIS 217</h4>
-                        <p>Formación técnica en desarrollo de software y fundamentos de programación.</p>
+                    <div class="experience-item" style="padding-left: 0; border-left: none;">
+                        <div class="experience-date">2018 - 2021</div>
+                        <h3 class="experience-title">Técnico en Programación</h3>
+                        <h4 class="experience-company">CBTIS 217</h4>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">
+                            Formación técnica en desarrollo de software y fundamentos de programación.
+                        </p>
                     </div>
                 </div>
                 
                 <div class="card">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
-                        <i class="fas fa-certificate"></i> Certificaciones y Logros
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.3rem;">
+                        <i class="fas fa-certificate"></i> Certificaciones & Logros
                     </h3>
-                    <div class="skill-list">
-                        <span class="skill-item" style="background-color: #f0f9ff; color: var(--primary-color);">
-                            <i class="fas fa-trophy" style="color: #fbbf24;"></i>
-                            OmegaUp Top 500
+                    
+                    <div class="skill-list" style="margin-bottom: 2rem;">
+                        <span class="skill-item" style="background: var(--gradient-secondary);">
+                            <i class="fas fa-trophy"></i> OmegaUp Top 500
                         </span>
-                        <span class="skill-item" style="background-color: #f0f9ff; color: var(--primary-color);">
-                            <i class="fas fa-code"></i>
-                            Codeforces Participant
+                        <span class="skill-item" style="background: var(--gradient-secondary);">
+                            <i class="fas fa-code"></i> Codeforces
                         </span>
-                        <span class="skill-item" style="background-color: #f0f9ff; color: var(--primary-color);">
-                            <i class="fas fa-medal"></i>
-                            Microsoft Certified
+                        <span class="skill-item" style="background: var(--gradient-secondary);">
+                            <i class="fab fa-aws"></i> AWS Certified
+                        </span>
+                        <span class="skill-item" style="background: var(--gradient-secondary);">
+                            <i class="fas fa-shield-alt"></i> Cybersecurity
                         </span>
                     </div>
                     
-                    <h3 style="color: var(--primary-color); margin: 1.5rem 0 1rem;">
+                    <h3 style="color: var(--primary-color); margin: 2rem 0 1rem; font-size: 1.3rem;">
                         <i class="fas fa-language"></i> Idiomas
                     </h3>
+                    
                     <div class="skill-list">
-                        <span class="skill-item">
-                            Español <span style="color: var(--success-color);">(Nativo)</span>
+                        <span class="skill-item" style="background: var(--gradient-primary);">
+                            Español (Nativo)
                         </span>
-                        <span class="skill-item">
-                            Inglés <span style="color: var(--success-color);">(Avanzado)</span>
+                        <span class="skill-item" style="background: var(--gradient-primary);">
+                            Inglés (Avanzado B2)
                         </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección de Proyectos -->
-    <section id="proyectos" class="projects-section" style="background-color: #f8fafc;">
-        <div class="container">
-            <h2 class="section-title">Proyectos Destacados</h2>
-            <p class="section-subtitle">Implementaciones técnicas que demuestran habilidades y creatividad</p>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Sistema de Gimnasio" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">EGOGYM POS 2.0</h3>
-                        <p>Sistema de punto de venta especializado para gimnasios con reconocimiento facial, control de acceso y gestión de membresías.</p>
-                        
-                        <div class="project-tech">
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">SQL Server</span>
-                            <span class="tech-tag">Face Recognition API</span>
-                            <span class="tech-tag">.NET</span>
-                        </div>
-                        
-                        <div class="project-links">
-                            <a href="https://github.com/Alex-cpp-lm/GYMEGO-POS" class="btn btn-primary" target="_blank">
-                                <i class="fab fa-github"></i> Código
-                            </a>
-                            <a href="#" class="btn btn-outline">
-                                <i class="fas fa-download"></i> Descargar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Tienda en Línea" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">Atenea Store E-commerce</h3>
-                        <p>Plataforma de comercio electrónico con carrito de compras, sistema de pagos en línea y panel administrativo completo.</p>
-                        
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">WordPress</span>
-                        </div>
-                        
-                        <div class="project-links">
-                            <a href="#" class="btn btn-primary">
-                                <i class="fas fa-external-link-alt"></i> Visitar
-                            </a>
-                            <a href="#" class="btn btn-outline">
-                                <i class="fab fa-github"></i> Código
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1167,53 +1356,55 @@
     <!-- Sección de Contacto -->
     <section id="contacto" class="contact-section">
         <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <p class="section-subtitle">Disponible para nuevas oportunidades y proyectos desafiantes</p>
+            <div class="section-header">
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">Disponible para proyectos desafiantes, consultoría tecnológica y oportunidades de colaboración</p>
+            </div>
             
             <div class="contact-container">
                 <div class="contact-info">
-                    <div class="contact-item card">
+                    <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
-                            <h3>Correo Electrónico</h3>
-                            <p>s21120228@alumnos.itsur.edu.mx</p>
+                            <h3 style="color: var(--text-color); margin-bottom: 0.3rem;">Correo Electrónico</h3>
+                            <p style="color: var(--text-muted);">alelom360@gmail.com</p>
                         </div>
                     </div>
                     
-                    <div class="contact-item card">
+                    <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
                         <div>
-                            <h3>Teléfono</h3>
-                            <p>+52 445 108 2306</p>
+                            <h3 style="color: var(--text-color); margin-bottom: 0.3rem;">Teléfono / WhatsApp</h3>
+                            <p style="color: var(--text-muted);">+52 445 217 3556</p>
                         </div>
                     </div>
                     
-                    <div class="contact-item card">
+                    <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fab fa-github"></i>
                         </div>
                         <div>
-                            <h3>GitHub</h3>
-                            <p>github.com/Alex-cpp-lm</p>
+                            <h3 style="color: var(--text-color); margin-bottom: 0.3rem;">GitHub</h3>
+                            <p style="color: var(--text-muted);">github.com/Alexlm26</p>
                         </div>
                     </div>
                     
-                    <div class="contact-item card">
+                    <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-globe"></i>
                         </div>
                         <div>
-                            <h3>Ubicación</h3>
-                            <p>México</p>
+                            <h3 style="color: var(--text-color); margin-bottom: 0.3rem;">Empresa</h3>
+                            <p style="color: var(--text-muted);">devnoway.com</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="contact-form card">
+                <div class="contact-form">
                     <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Envíame un mensaje</h3>
                     <form id="contactForm">
                         <div class="form-group">
@@ -1251,33 +1442,37 @@
             <div class="footer-content">
                 <div class="footer-logo">ALEXANDER LÓPEZ MORA</div>
                 
-                <p>Desarrollador Full Stack especializado en crear soluciones tecnológicas innovadoras</p>
+                <p style="color: var(--text-muted); text-align: center; max-width: 600px;">
+                    CEO de Nowaysolutions y Desarrollador Full Stack especializado en soluciones empresariales, 
+                    hosting privado y desarrollo de software a medida.
+                </p>
                 
                 <div class="footer-links">
                     <a href="#inicio" class="footer-link">Inicio</a>
                     <a href="#habilidades" class="footer-link">Habilidades</a>
                     <a href="#experiencia" class="footer-link">Experiencia</a>
+                    <a href="#ceo" class="footer-link">CEO</a>
                     <a href="#proyectos" class="footer-link">Proyectos</a>
                     <a href="#contacto" class="footer-link">Contacto</a>
                 </div>
                 
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="GitHub">
+                    <a href="https://github.com/Alexlm26" class="social-link" aria-label="GitHub" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
                     <a href="#" class="social-link" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="social-link" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
+                    <a href="https://devnoway.com" class="social-link" aria-label="Nowaysolutions" target="_blank">
+                        <i class="fas fa-server"></i>
                     </a>
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
+                    <a href="#" class="social-link" aria-label="Portafolio">
+                        <i class="fas fa-briefcase"></i>
                     </a>
                 </div>
                 
                 <div class="copyright">
-                    &copy; 2023 Alexander López Mora. Todos los derechos reservados.
+                    &copy; 2026 Alexander López Mora. CEO de Nowaysolutions. Todos los derechos reservados.
                 </div>
             </div>
         </div>
@@ -1289,7 +1484,7 @@
     </button>
 
     <script>
-        // Tema claro/oscuro
+        // Toggle tema claro/oscuro
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = themeToggle.querySelector('i');
         
@@ -1374,7 +1569,7 @@
         }, observerOptions);
         
         // Observar elementos para animaciones
-        document.querySelectorAll('.card, .timeline-item, .project-card').forEach(el => {
+        document.querySelectorAll('.card, .experience-item, .project-card, .contact-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -1387,10 +1582,26 @@
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Aquí normalmente se enviaría el formulario a un servidor
-            // Por ahora solo mostraremos un mensaje de éxito
-            alert('¡Gracias por tu mensaje! Te contactaré pronto.');
-            contactForm.reset();
+            // Simulación de envío
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
+                submitBtn.style.background = 'var(--gradient-secondary)';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                    contactForm.reset();
+                    
+                    alert('¡Gracias por tu mensaje! Te contactaré pronto.');
+                }, 2000);
+            }, 1500);
         });
         
         // Navegación suave
@@ -1409,6 +1620,20 @@
                     });
                 }
             });
+        });
+        
+        // Inicializar animaciones en carga
+        window.addEventListener('load', () => {
+            // Animación inicial para hero
+            const heroText = document.querySelector('.hero-text');
+            heroText.style.opacity = '0';
+            heroText.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                heroText.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                heroText.style.opacity = '1';
+                heroText.style.transform = 'translateY(0)';
+            }, 300);
         });
     </script>
 </body>
